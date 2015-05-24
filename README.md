@@ -1,5 +1,4 @@
-# amdb-django-default-template
-<<<<<<< HEAD
+# Django Default Template
 Default template for my personal/profissional Django projects
 Useful if you develop in Windows and deploy in Linux
 
@@ -23,6 +22,4 @@ django-admin.py startproject --template= --db_pass=Dbpassword --site_name="Site 
 - Use env keys
 - Chance FileCache to Memcached new config
 - settings/remote.py - everything worth looking at
-=======
-My personal Django project template
->>>>>>> origin/master
+

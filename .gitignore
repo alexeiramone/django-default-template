@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 # AMDB not-so common pathes
 _junk/*.*
 *.djcache
 
-=======
->>>>>>> origin/master
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -54,12 +52,6 @@ coverage.xml
 *.mo
 *.pot
 
-<<<<<<< HEAD
-=======
-# Django stuff:
-*.log
-
->>>>>>> origin/master
 # Sphinx documentation
 docs/_build/
 
