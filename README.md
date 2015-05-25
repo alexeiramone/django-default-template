@@ -6,7 +6,7 @@ Useful if you develop in Windows and deploy in Linux
 
 ## Usage:
 
-    django-admin.py startproject --template=https://github.com/alexeiramone/django-default-template/archive/master.zip --extensions=py **whatever**
+    django-admin.py startproject --template=https://github.com/alexeiramone/django-default-template/archive/master.zip whatever
 
 Where `whatever` is the projectname.
 
@@ -16,17 +16,28 @@ This will create (where you ran `django-admin.py`):
     \whatever\.gitignore
     \whatever\LICENSE
     \whatever\manage.py
+    \whatever\project_static
     \whatever\README.md
     \whatever\run.bat
     \whatever\settings
+    \whatever\templates
     \whatever\whatever
     \whatever\_cache
     \whatever\_log
     \whatever\_media
+    \whatever\project_static\alexei.css
+    \whatever\project_static\alexei.min.css
+    \whatever\project_static\favicon
+    \whatever\project_static\img
+    \whatever\project_static\favicon\original.png
+    \whatever\project_static\img\void.txt
     \whatever\settings\base.py
     \whatever\settings\local.py
     \whatever\settings\remote.py
     \whatever\settings\__init__.py
+    \whatever\templates\base.html
+    \whatever\templates\email_template.html
+    \whatever\templates\index.html
     \whatever\whatever\context_processors.py
     \whatever\whatever\urls.py
     \whatever\whatever\wsgi.py
@@ -60,6 +71,7 @@ This will create (where you ran `django-admin.py`):
 ## Manual Overrides
 - settings/local.py - MAILGUN_ACCESS_KEY
 - settings/remote.py - everything worth looking at
+- Delete all void.txt files
 
 ## TODO:
 - Use env keys
