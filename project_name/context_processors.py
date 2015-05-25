@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# {% now "%Y/%b/%d %H:%M:%S" %} - Created
+# {% now "Y/m/d H:m" %} - Created
 
 from django.utils import timezone
 

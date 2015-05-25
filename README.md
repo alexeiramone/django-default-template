@@ -10,12 +10,17 @@ django-admin.py startproject --template=https://github.com/alexeiramone/django-d
 - We use mongoose 4.1 one folder above project to serve media to every project.
 - Run.bat calls mongoose and django in two separate command windows and opens another one if you need to call some `manage.py shell` or something
 
-### This will set (among many others):
-- GRAPPELLI_ADMIN_TITLE = u'{{ project_name|capfirst }}'
+### Features
+- Postgresql database
+- Mailgun Backend config via django_mailgun
+- Database Name and Database Username are the project name's first 8 chars
+- Grappelli
+- Filebrowser
+- Some Filebrowser configurations based on largest Bootstrap 3 column widths
 
 ## Manual Overrides
-- local.py - MAILGUN_ACCESS_KEY
-
+- settings/local.py - MAILGUN_ACCESS_KEY
+- settings/remote.py - Tons o' configs
 
 ## TODO:
 - Use env keys
