@@ -40,6 +40,7 @@ This will create (where you ran `django-admin.py`):
     \whatever\templates\index.html
     \whatever\whatever\context_processors.py
     \whatever\whatever\urls.py
+    \whatever\whatever\views.py
     \whatever\whatever\wsgi.py
     \whatever\whatever\__init__.py
     \whatever\_cache\void.txt
