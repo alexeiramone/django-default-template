@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# {% now "%Y/%b/%d %H:%M:%S" %} - Created
+
 from settings.base import *
 
 DEBUG = False

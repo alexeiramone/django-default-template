@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# {% now "%Y/%b/%d %H:%M:%S" %} - Created
 
 import os
 

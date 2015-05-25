@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# {% now "%Y/%b/%d %H:%M:%S" %} - Created
+
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 

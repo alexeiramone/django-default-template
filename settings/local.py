@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Created: {% now "jS F Y H:i" %}
+# {% now "%Y/%b/%d %H:%M:%S" %} - Created
 
 from settings.base import *
 
@@ -16,7 +16,7 @@ MIDDLEWARE_CLASSES += (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS += (
-    "revistatenis.context_processors.local",
+    "{{ project_name }}.context_processors.local",
     "django.core.context_processors.debug",
 )
 

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# {% now "%Y/%b/%d %H:%M:%S" %} - Created
+
 """
 WSGI config for {{ project_name }} project.
 
@@ -8,7 +11,8 @@ https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/wsgi/
 """
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings")
+settings_name = "settings.local" if os.name == 'nt' else "settings.remote"
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_name)
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
