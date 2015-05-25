@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block titulo %}{{ SITE.name }}{% endblock %}
+{% block subtitulo %}{{ SITE.name }}{% endblock %}
+{% load static cache artigos_tags chamadas_tags rankings_tags %}
+{% block content %}
+{% cache 600 index %}
+<div class="row">
+  <div class="span3">
+    {% chamadas local=1 max=2 image_variation="fixed_small" titles=False subtitles=False css_class="chamada_side" %}
+  </div>
+  <div class="span6">
+    {% chamadas_carrossel local=0 image_variation="fixed_medium" %}
+  </div>
+</div>
+<div class="row">
+  {% chamadas local=2 max=3 image_variation="fixed_small" css_class="span3" subtitles=False %}
+</div>
+<div class="row">
+  <div class="span4">
+    {% include "box_cadastro.html" %}
+    {% include "include_banners.html" with ad_size="300x250" %}
+  </div>
+  <div class="span5">
+    {% box_listagem_ultimas secao="Notícias" quantidade=6 %}
+  </div>
+</div>
+{% endcache %}
+{% endblock content %}

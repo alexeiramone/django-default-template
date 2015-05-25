@@ -1,0 +1,15 @@
+{% extends "core_email_template.html" %}
+{% load static %}
+{% block email_header %}
+<div style="border-bottom: 1px solid #ccc;">
+	<a href="http://{{ SITE.domain }}">
+		<img src="" alt="{{ SITE.name }}" style="margin:15px; width:100px; height:auto; float:left;">
+	</a>
+	<p style="float:left; margin: 15px; font-size: 2.4em; letter-spacing: -1px; line-height: .8em;">{{ email_subject|default:"Boletim" }} {{ SITE.name }}</p>
+	<br style="clear:left;">
+</div>
+{% endblock email_header %}
+{% block email_message %}{% endblock email_message %}
+{% block email_footer %}
+{% include "inner_email_footer.html" %}
+{% endblock email_footer %}

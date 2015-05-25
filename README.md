@@ -2,9 +2,11 @@
 Default template for my personal/profissional Django projects
 Useful if you develop in Windows and deploy in Linux
 
+> **IMPORTANT** This project is public but many of the features it uses are loaded from private repositories so this won't work out-of-the-box.
+
 ## Usage:
 
-    django-admin.py startproject --template=https://github.com/alexeiramone/django-default-template/archive/master.zip **whatever**
+    django-admin.py startproject --template=https://github.com/alexeiramone/django-default-template/archive/master.zip --extensions=py **whatever**
 
 Where `whatever` is the projectname.
 
@@ -44,6 +46,11 @@ This will create (where you ran `django-admin.py`):
 - Grappelli
 - Filebrowser
 - Some Filebrowser configurations based on largest Bootstrap 3 column widths
+- project_static folder, will be collected. We use it for site-specific assets like logo and CSS overrides (in alexei.css)
+- media/favicon - We use [Realfavicongenerator.net](http://realfavicongenerator.net/) and drop all stuff there. Original.png as used as folder placeholder but we always upload the logo original file there.
+- /templates/base.html - Extends from core.html (In AMDB's private repo)
+- /templates/index.html - Homepage
+- /templates/email_template.html - Simple sanitized email template, inherits from private repo too.
 
 ## Run.bat
 - Spawns Mongoose preconfigured to this project's default media path

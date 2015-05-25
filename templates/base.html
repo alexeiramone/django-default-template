@@ -1,0 +1,45 @@
+{% extends "core.html" %}
+{% load static cache %}
+{% load uol_banners_config box_mais_lidas catalyst from amdbcore %}
+{% block titulo %}{{ BASE_REGULAR_SEPARATOR|safe }} {{ block.super }}{% endblock titulo %}
+{% block page_specific %}
+    {% uol_banners_config %}
+{% endblock page_specific %}
+{% block header %}
+{% cache 3600 cache_header %}
+{% include "include_barrauol.html" %}
+<div class="container">
+  <div style="float:left; width:22%;">
+    <a href="//{{ SITE.domain }}"><img src="" alt="{{ SITE.name }}" style="margin:25px 0 15px 0;">
+    </a>
+  </div>
+  <div style="float:right; width:730px; margin:15px 0;">
+    {% include "include_banners.html" with ad_size="728x90" %}
+  </div>
+  <br style="clear:both;">
+</div>
+{% endcache %}
+{% endblock header %}
+
+{% block main_content %}
+  <div class="container">
+    <div class="row">
+      <div class="span{{ span_main|default:"8" }}"><!-- MAIN -->
+        {% block content %}{% endblock content %}
+      </div>
+      <div class="span{{ span_sidebar|default:"4" }}"><!-- SIDEBAR -->
+        {% block sidebar %}{% cache 3600 sidebar span_sidebar %}
+        {% if span_sidebar|default:"4" == "4" %}
+          {% include "include_banners.html" with ad_size="300x250" %} <br><br>
+          {% include "box_cadastro.html" %}
+        {% endif %}
+        {% box_mais_lidas %}
+        {% endcache %}{% endblock sidebar %}
+      </div>
+    </div>
+  </div>
+{% endblock main_content %}
+{% block footer %}
+  {% catalyst %}
+{% endblock footer %}
+
