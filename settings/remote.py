@@ -4,11 +4,11 @@ from settings.base import *
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-URL_PREFIX = u'http://www.{{ site_domain }}'
+URL_PREFIX = u'http://www.{{ project_name }}.com.br'
 
-ALLOWED_HOSTS = ['.{{ project_name }}.uol.com.br', '.{{ site_domain }}']
+ALLOWED_HOSTS = ['.{{ project_name }}.uol.com.br', '.{{ project_name }}.com.br']
 
-DATABASES['default']['PASSWORD'] = '{{ db_pass }}'
+DATABASES['default']['PASSWORD'] = ''
 
 TEMPLATE_CONTEXT_PROCESSORS += (
     "{{ project_name }}.context_processors.remote",
@@ -75,7 +75,7 @@ LOGGING = {
 EMAIL_SUBJECT_PREFIX = ''
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 MAILGUN_ACCESS_KEY = ''
-MAILGUN_SERVER_NAME = 'mg.{{ site_domain }}'
+MAILGUN_SERVER_NAME = 'mg.{{ project_name }}.com.br'
 
 
 TWITTER_USERNAME = '{{ project_name }}'

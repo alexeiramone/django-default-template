@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# Created: {% now "jS F Y H:i" %}
+
 from settings.base import *
 
 DEBUG = True
@@ -7,7 +9,7 @@ SITE_ID = 2
 
 MEDIA_URL = 'http://localhost:8080/'
 
-DATABASES['default']['PASSWORD'] = '{{ db_pass }}'
+DATABASES['default']['PASSWORD'] = ''
 
 MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',

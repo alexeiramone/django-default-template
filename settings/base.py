@@ -25,7 +25,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '{{ project_name|slice:8 }}_db',                      # Or path to database file if using sqlite3.
         'USER': '{{ project_name|slice:8 }}_dbuser',
-        'PASSWORD': '{{ db_pass }}',
+        'PASSWORD': '',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
         'CONN_MAX_AGE': 300
@@ -129,7 +129,7 @@ LOGGING = {
 }
 
 
-GRAPPELLI_ADMIN_TITLE = u'{{ site_name }}'
+GRAPPELLI_ADMIN_TITLE = u'{{ project_name|capfirst }}'
 
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -147,7 +147,7 @@ CACHES = {
     }
 
 #Email defaults
-DEFAULT_FROM_EMAIL = u'Webmaster <webmaster@{{ site_domain }}>'
+DEFAULT_FROM_EMAIL = u'Webmaster <webmaster@{{ project_name }}.com.br>'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_PASSWORD = u''
