@@ -4,7 +4,7 @@ Useful if you develop in Windows and deploy in Linux
 
 ## Usage:
 
-django-admin.py startproject --template=https://github.com/alexeiramone/django-default-template/archive/master.zip whataever
+django-admin.py startproject --template=https://github.com/alexeiramone/django-default-template/archive/master.zip whatever
 
 ## Run.bat
 - We use mongoose 4.1 one folder above project to serve media to every project.
