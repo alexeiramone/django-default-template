@@ -7,6 +7,10 @@ Useful if you develop in Windows and deploy in Linux
 ## Usage:
 
     django-admin.py startproject --template=https://github.com/alexeiramone/django-default-template/archive/master.zip whatever
+    manage.py migrate
+    manage.py createsuperuser
+    manage.py loaddata sites_site
+    manage.py collectstatic --noinput
 
 Where `whatever` is the projectname.
 
@@ -25,6 +29,8 @@ This will create (where you ran `django-admin.py`):
     \whatever\_cache
     \whatever\_log
     \whatever\_media
+    \whatever\fixtures
+    \whatever\fixtures\sites_site.json
     \whatever\project_static\alexei.css
     \whatever\project_static\alexei.min.css
     \whatever\project_static\favicon
@@ -63,6 +69,7 @@ This will create (where you ran `django-admin.py`):
 - /templates/base.html - Extends from core.html (In AMDB's private repo)
 - /templates/index.html - Homepage
 - /templates/email_template.html - Simple sanitized email template, inherits from private repo too.
+- Sites framework: settings.local uses SITE_ID=2 and settings.remote uses SITE_ID=1
 
 ## Run.bat
 - Spawns Mongoose preconfigured to this project's default media path
@@ -74,8 +81,12 @@ This will create (where you ran `django-admin.py`):
 - settings/remote.py - everything worth looking at
 - Delete all void.txt files
 
+
 ## TODO:
 - Use env keys
 - Chance FileCache to Memcached new config
 - I18N deprecation: `USE_I18N = True` and `django.core.context_processors.i18n`
+- Fixtures: test
+- Requirements (update all txts)
+- Requirements testing
 
