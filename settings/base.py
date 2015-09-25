@@ -12,10 +12,15 @@ URL_PREFIX = u'http://127.0.0.1:8000'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
 ADMINS = (
     ('Alexei Martchenko', 'alexei@amdb.com.br'),
     ('Vagner Ynsei Fokama', 'vagner@amdb.com.br'),
 )
+
+GRAPPELLI_INDEX_DASHBOARD = '{{ project_name }}.dashboard.CustomIndexDashboard'
+
 
 MANAGERS = ADMINS
 
@@ -29,7 +34,7 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
-        'CONN_MAX_AGE': 300
+        'CONN_MAX_AGE': None
     }
 }
 
@@ -193,10 +198,13 @@ DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False}
 EASY_MAPS_CENTER = (-41.3, 32)
 
 TWITTER_USERNAME = None
+FACEBOOK_USERNAME = None
 GOOGLE_ANALYTICS_CODE = None
 TYNT_CODE = None
-GOOGLE_WEBMASTERS_CODE = None
+GOOGLE_WEBMASTERS_CODE = ['8524e35e655bacb9', '09a9d0b0b5f7d139']
 BING_WEBMASTERS_CODE = None
 ADDTHIS_CODE = None # 'ra-????????????????'
+DISQUS_SHORTNAME = '{{ project_name }}'
 
+MSCONFIG_TILECOLOR = '#ffc40d'
 

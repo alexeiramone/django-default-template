@@ -1,3 +1,4 @@
 -r base.txt
 psycopg2>=2.5
-memcached
+python-memcached>=1.57
+newrelic>=2.54.0.41

@@ -8,29 +8,20 @@ TEMPLATE_DEBUG = False
 
 URL_PREFIX = u'http://www.{{ project_name }}.com.br'
 
-ALLOWED_HOSTS = ['.{{ project_name }}.uol.com.br', '.{{ project_name }}.com.br']
+ALLOWED_HOSTS = ['.{{ project_name }}.uol.com.br', '.{{ project_name }}.com.br', '{{ project_name }}.amdb.com.br']
 
 DATABASES['default']['PASSWORD'] = ''
 
 TEMPLATE_CONTEXT_PROCESSORS += (
+    "amdb.core.context_processors.remote",
     "{{ project_name }}.context_processors.remote",
 )
 
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-#         'LOCATION': 'locmem_{{ project_name }}',
-#         },
-#     }
-
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': BASE_DIR + '/_cache',
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
         'TIMEOUT': 600, # DJ17-only 300 default
-        'OPTIONS': {
-            'MAX_ENTRIES': 500, #DJ17-only 300 default
-        },
         'KEY_PREFIX': '{{ project_name }}',
     }
 }
@@ -80,19 +71,16 @@ MAILGUN_ACCESS_KEY = ''
 MAILGUN_SERVER_NAME = 'mg.{{ project_name }}.com.br'
 
 
-TWITTER_USERNAME = '{{ project_name }}'
-GOOGLE_ANALYTICS_CODE = 'UA-40696379-2'
-TYNT_CODE = 'ahT0N-opGr5kOOacwqm_6l'
-GOOGLE_WEBMASTERS_CODE = ['8524e35e655bacb9', '09a9d0b0b5f7d139']
-BING_WEBMASTERS_CODE = None
-ADDTHIS_CODE = 'ra-51966fd03329991f'
-FACEBOOK_USERNAME = '{{ project_name }}'
-DISQUS_SHORTNAME = '{{ project_name }}'
-MSCONFIG_TILECOLOR = '#00aba9'
+# UOL_BANNERS_CONFIG = {
+#     'site': 'par',
+#     'affiliate': 'par{{ project_name }}',
+#     'chan': '',
+#     'subchan': 'outros',
+#     'campaignuol': '1',
+#     'group': '6',
+#     'floater': 'true',
+#     'platform': 'web',
+# }
 
-UOL_BANNERS_CONFIG = {
-    'affiliate': 'par{{ project_name }}',
-    'group': 6,
-}
-
-UOL_CATALYST_CODE = '{{ project_name }}'
+# UOL_BANNERS_CONFIG_CHAN_PREFIX = 'par{{ project_name }}'
+# UOL_CATALYST_CODE = '{{ project_name }}'

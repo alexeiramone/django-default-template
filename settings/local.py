@@ -7,7 +7,7 @@ DEBUG = True
 
 SITE_ID = 2
 
-MEDIA_URL = 'http://localhost:8080/'
+MEDIA_URL = 'http://127.0.0.1:8080/'
 
 DATABASES['default']['PASSWORD'] = ''
 
@@ -24,5 +24,8 @@ INSTALLED_APPS += (
    'debug_toolbar',
 )
 
-FBGALLERY_THUMBNAIL_VERSION = "fixed_thumbnail"
-FBGALLERY_IMAGE_VERSION = "free_big"
+# python -m smtpd -n -c DebuggingServer localhost:1025
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_PORT = 1025
+# EMAIL_SUBJECT_PREFIX = '[DummyEmail] '
+
