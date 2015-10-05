@@ -99,6 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.redirects',
+    'grappelli.dashboard',
     'grappelli',
     'filebrowser',
     'django.contrib.admin',
@@ -148,7 +149,7 @@ GRAPPELLI_ADMIN_TITLE = u'{{ project_name|capfirst }}'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
+    "django.core.context_processors.request",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
 )
@@ -190,8 +191,9 @@ FILEBROWSER_ADMIN_THUMBNAIL = 'thumbnail'
 FILEBROWSER_SEARCH_TRAVERSE = True
 FILEBROWSER_NORMALIZE_FILENAME = True
 FILEBROWSER_CONVERT_FILENAME = True
-FILEBROWSER_DIRECTORY = ''
+FILEBROWSER_DIRECTORY = 'uploads/'
 FILEBROWSER_VERSIONS_BASEDIR = '_versions/'
+FILEBROWSER_OVERWRITE_EXISTING = False
 
 DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False}
 
