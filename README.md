@@ -81,12 +81,15 @@ This will create (where you ran `django-admin.py`):
 - settings/remote.py - everything worth looking at
 - Delete all void.txt files
 
+## Updates
+- 2015.10.01: `django-grappelli>=2.6.0,<=2.6.9` because 2.6.x trunk belongs to Django 1.7.x;
+- 2015.10.27: Let's keep in `Pillow>=2.8.1,<3.0.0` because I haven't tested 3.x yet;
+- 2015.10.27: Minor changes in DOCs;
+- 2015.10.27: Pytz 2015.6 is safe, LXML is ok;
 
 ## TODO:
 - Use env keys
 - Chance FileCache to Memcached new config
 - I18N deprecation: `USE_I18N = True` and `django.core.context_processors.i18n`
-- Fixtures: test
-- Requirements (update all txts)
 - Requirements testing
 
